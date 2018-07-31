@@ -30,7 +30,7 @@ training and testing results.
 ### Scripts used for imputation:
 - imputation.py
 
-###Scripts and files used to specify file paths to emails authored by Enron employees present in the main dataset:
+### Scripts and files used to specify file paths to emails authored by Enron employees present in the main dataset:
 - email_paths.py
 - poi_email_addresses.py
 - maildir_test
@@ -69,7 +69,7 @@ pipeline. Some of those scripts have longer runtime, so I will also provide the 
 - BFS_summary_20folds.pkl (file containing the results from the sequential search for best subset)
 -> all main dataset files mentioned above are in dataframe format
 
-###Following files were used in the course of email text cleaning (stored in the folder NLP_names_dataset):
+### Following files were used in the course of email text cleaning (stored in the folder NLP_names_dataset):
 - Black_Female_Names.csv
 - Black_Male_Names.csv
 - White_Female_Names.csv
