@@ -14,11 +14,11 @@ corpus can be downloaded from the Carnegie Mellon School of Computer Science (ht
 
 #Run the analysis pipeline
 The analysis pipeline/scripts can be executed via jupyter notebook (be careful and provide the correct root path to
-the filder containing the email corpus for reconstructing email features and engineering new features!! email 
-corpus must be downloaded and stored locally). Executing the entire notebook will take a lot of time (long runtime 
-for particular scripts). Alternatively, preprocessed files (see section "Using preprocessed files" below) that are
+the folder containing the email corpus for reconstructing email features and engineering new features!! email 
+corpus must be downloaded and stored locally) or by running the poi_id.py script. Executing the entire notebook will take a lot of time (long runtime 
+for particular scripts). Alternatively, preprocessed files (see section "Using preprocessed files" below) that were
 generated via the pipeline are provided and can be loaded instead and simply feed into downstream pipeline (see 
-jupyter notebook for more clarification).
+jupyter notebook for more clarification). Similarly, runtime for the poi_id.py script depends on what parts of the code are executed (please read the comments provided in the script). The default settings will load some preprocessed data instead of generating them from scratch. This is due to long runtime for respective scripts. However, the user can also execute the code to generate those files (uncomment the relevant code snippets; please read the comments in poi_id.py)
 
 Also, training and testing of different classifier can be executed via jupyter notebook as a standalone by first
 loading the required main datasets and the file storing information on the best feature subset (see Notification 
@@ -30,9 +30,11 @@ training and testing results.
 ###Scripts used for imputation:
 - imputation.py
 
-###Scripts used to specify file paths to emails authored by Enron employees present in the main dataset:
+###Scripts and files used to specify file paths to emails authored by Enron employees present in the main dataset:
 - email_paths.py
 - poi_email_addresses.py
+- maildir_test
+—> maildir_test contains a small test set of the entire email corpus and can be used to test the email_paths.py script (long runtime in combination with the entire email dataset!!) 
 
 ###Scripts used for feature engineering (involves cleaning and processing of email data):
 - EmailProcessing_COUNTS.py
@@ -67,11 +69,11 @@ pipeline. Some of those scripts have longer runtime, so I will also provide the 
 - BFS_summary_20folds.pkl (file containing the results from the sequential search for best subset)
 -> all main dataset files mentioned above are in dataframe format
 
-###Following files were used in the course of email text cleaning:
-- Black_Female_Names_nlp.zip
-- Black_Male_Names_nlp.zip
-- White_Female_Names_nlp.zip
-- White_Male_Names_nlp.zip
+###Following files were used in the course of email text cleaning (stored in the folder NLP_names_dataset):
+- Black_Female_Names.csv
+- Black_Male_Names.csv
+- White_Female_Names.csv
+- White_Male_Names.csv
 -> those files store canonical names of black and white american citizens, which were used to remove names from 
 the email corpus prior to stemming. Files were obtained from  http://mbejda.github.io/
 

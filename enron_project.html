@@ -11772,7 +11772,7 @@ Eventually, Enron filed for bankruptcy in 2001 (<a href="http://edition.cnn.com/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
@@ -11834,7 +11834,7 @@ Eventually, Enron filed for bankruptcy in 2001 (<a href="http://edition.cnn.com/
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
@@ -11848,57 +11848,16 @@ Eventually, Enron filed for bankruptcy in 2001 (<a href="http://edition.cnn.com/
     <span class="k">for</span> <span class="n">feature_key</span> <span class="ow">in</span> <span class="n">financial_data</span><span class="p">[</span><span class="n">name_key</span><span class="p">]:</span>
         <span class="n">features_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">feature_key</span><span class="p">)</span>
     <span class="k">break</span> 
-
-    
-<span class="c1"># check the number of data points in the set (number of names)</span>
-<span class="k">print</span> <span class="s2">&quot;total number of data points in the set: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">financial_data</span><span class="p">)</span>
-
-<span class="c1"># check the dimensionality of data (number of features per data point)</span>
-<span class="k">print</span> <span class="s2">&quot;total number of features per data point: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">features_list</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>total number of data points in the set:  146
-total number of features per data point:  21
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The overall sample size of the main dataset is quite low with only 146 data points. In proportion to sample size, the number of features is rather high. Already at this point we can conclude that overfitting will be an issue in the process of model building!</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Check-for-irregularities-and-outliers">Check for irregularities and outliers<a class="anchor-link" href="#Check-for-irregularities-and-outliers">&#182;</a></h1>
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># transform data dictionary to pandas data frame</span>
@@ -11915,7 +11874,7 @@ total number of features per data point:  21
 <div class="output">
 
 
-<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12092,6 +12051,128 @@ total number of features per data point:  21
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># check the number of data points in the set (number of names)</span>
+<span class="k">print</span> <span class="s2">&quot;total number of data points in the set: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">financial_data</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>total number of data points in the set:  146
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># check the dimensionality of data (number of features per data point)</span>
+<span class="k">print</span> <span class="s2">&quot;total number of features per data point: &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">features_list</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>total number of features per data point:  21
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#check poi sample size </span>
+<span class="k">print</span> <span class="s2">&quot;number of samples in the poi class&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">data_df</span><span class="p">[</span><span class="s2">&quot;poi&quot;</span><span class="p">]</span><span class="o">==</span><span class="bp">True</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>number of samples in the poi class 18
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#check poi sample size </span>
+<span class="k">print</span> <span class="s2">&quot;number of samples in the poi class&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_df</span><span class="p">[</span><span class="n">data_df</span><span class="p">[</span><span class="s2">&quot;poi&quot;</span><span class="p">]</span><span class="o">==</span><span class="bp">False</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>number of samples in the poi class 128
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The overall sample size of the main dataset is quite low with only 146 data points. In proportion to sample size, the number of features is rather high. Already at this point we can conclude that overfitting will be an issue in the process of model building! Moreover, the distribution of the two classes present in the dataset <strong>-person of interest (poi) and not person of interest (not-poi)-</strong> is highly imbalanced with 128 examples for the not-poi class and only 21 examples for the poi class. Imbalanced class distribution can be an issue with model training and model validation, so it is required to apply a suitable strategy in order to avoid high variance in the model (either over- or underfitting).</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
@@ -12115,6 +12196,15 @@ total number of features per data point:  21
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Check-for-irregularities-and-outliers">Check for irregularities and outliers<a class="anchor-link" href="#Check-for-irregularities-and-outliers">&#182;</a></h1>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -18754,7 +18844,7 @@ Name: BADUM JAMES P, dtype: object
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">from_email_paths</span> <span class="o">=</span> <span class="n">email_processor</span><span class="o">.</span><span class="n">extractPath</span><span class="p">(</span><span class="n">email_by_name</span><span class="p">)</span>
@@ -18845,10 +18935,44 @@ Now we can use the entire corpus, run the code and save the dictionary using pic
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;from_email_paths.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_in</span><span class="p">:</span>
+    <span class="n">from_email_paths</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_in</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">IOError</span>                                   Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-5-9d4792ee5f32&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;from_email_paths.pkl&#34;</span><span class="ansi-blue-fg">,</span> <span class="ansi-blue-fg">&#34;r&#34;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> file_in<span class="ansi-blue-fg">:</span>
+<span class="ansi-green-intense-fg ansi-bold">      2</span>     from_email_paths <span class="ansi-blue-fg">=</span> pickle<span class="ansi-blue-fg">.</span>load<span class="ansi-blue-fg">(</span>file_in<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">IOError</span>: [Errno 2] No such file or directory: &#39;from_email_paths.pkl&#39;</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="n">bz2</span><span class="o">.</span><span class="n">BZ2File</span><span class="p">(</span><span class="s2">&quot;from_email_paths.pkl.bz2&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_in</span><span class="p">:</span>
     <span class="n">from_email_paths</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file_in</span><span class="p">)</span>
 </pre></div>
 
@@ -19211,20 +19335,6 @@ However, emails sent to poi employees and authored by both of the aforementioned
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[148]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="n">email_features</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;to_messages&quot;</span><span class="p">,</span> <span class="s2">&quot;shared_receipt_with_poi&quot;</span><span class="p">,</span> <span class="s2">&quot;from_messages&quot;</span><span class="p">,</span> 
-                <span class="s2">&quot;from_this_person_to_poi&quot;</span><span class="p">,</span> <span class="s2">&quot;from_poi_to_this_person&quot;</span><span class="p">])</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[149]:</div>
 <div class="inner_cell">
     <div class="input_area">
@@ -19391,36 +19501,6 @@ Additionally remove email duplicates (same email in different folders).</p>
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">EmailProcessing_NLP</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">process</span> <span class="o">=</span> <span class="n">EmailStemmer</span><span class="p">(</span><span class="n">from_email_paths</span><span class="p">,</span><span class="n">data_df</span><span class="p">)</span> 
 <span class="n">word_data</span><span class="p">,</span> <span class="n">from_data</span> <span class="o">=</span> <span class="n">process</span><span class="o">.</span><span class="n">ProcessEmail</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># convert stemmed words into TF-IDF values </span>
-<span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
-<span class="n">vectorizer_fitted</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">word_data</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1">#select the best 5 TF-IDF values</span>
-<span class="n">selector</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">score_func</span><span class="o">=</span><span class="n">f_classif</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">selector_fitted</span> <span class="o">=</span> <span class="n">selector</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">vectorizer_fitted</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -20140,7 +20220,7 @@ Loading the following files enables the user to proceed with model training and 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data_df_update_tfidf.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_in</span><span class="p">:</span>
@@ -20164,7 +20244,7 @@ Loading the following files enables the user to proceed with model training and 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;default_dataset.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_in</span><span class="p">:</span>
@@ -20188,7 +20268,7 @@ Loading the following files enables the user to proceed with model training and 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;BFS_summary_20folds.pkl&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file_in</span><span class="p">:</span>
@@ -20216,16 +20296,46 @@ Loading the following files enables the user to proceed with model training and 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>As already stated, the dataset is highly unbalanced, consisting of predominantly non-poi class members (87.5%). If any classifier would exclusively predict non-poi class, the overall accuracy (number of accurate predictions over all classes) would be 87.5%. However, such a classifier would result in 100% misclassification of poi class, which is actually the class of interest in the context of this analysis. Instead precision and recall will be used as evaluation metrics as both reflect classifier performance over all classes.</p>
+<h3 id="Evaluation-of-classifier-performance">Evaluation of classifier performance<a class="anchor-link" href="#Evaluation-of-classifier-performance">&#182;</a></h3><p>As already stated, the dataset is highly unbalanced, consisting of predominantly non-poi class members (87.5%). If any classifier would exclusively predict non-poi class, the overall accuracy (number of accurate predictions over all classes) would be 87.5%. However, such a classifier would result in 100% misclassification of poi class, which is actually the class of interest in the context of this analysis. To account for unbalanced data, <strong>precision and recall</strong> will be used as evaluation metrics since both reflect classification performance over all classes.</p>
+<p><em>A technical detail considering classification evaluation: ultimately, classification performance will be evaluated using <strong>f1 score</strong>, which is simply the harmonic average of the precision and recall (<a href="https://en.wikipedia.org/wiki/F1_score">https://en.wikipedia.org/wiki/F1_score</a>). As such, using the f1 score provides a convenient way to consider both, precision and recall, in the evaluation process</em></p>
 <p><strong>precision: True positive/True positive + False positive</strong></p>
 <ul>
-<li>precision specifies what proportion of positive predictions are actually correct </li>
+<li>precision specifies what proportion of positive predictions are actually correct.<br>
+<em>In the context of the project, precision reflects the percentage of correctly predicted persons of interest out of the total number of individuals that were classified as person of interest by the algorithm.</em>  </li>
 </ul>
 <p><strong>recall: True positive/True positive + False negative</strong></p>
 <ul>
-<li>recall specifies what proportion of total positives have been predicted correctly (reflects completeness of classification results) </li>
+<li>recall specifies what proportion of total positives have been predicted correctly (reflects completeness of classification results).<br>
+<em>In the context of the project, recall specifies how many person of interest out of the total number of persons of interest present in the dataset have been predicted by the classification algorithm.</em></li>
 </ul>
-<p>New features have already been engineered and incorporated into the main dataset. However, I want to first evaluate different classifiers using the default feature set. This "baseline" evaluation will serve to select the best one or two classifier that will be further subjected to optimization (feature selection, hyperparameter tuning). Each optimization step will be compared to the performance from "baseline" metrics.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Model-validation">Model validation<a class="anchor-link" href="#Model-validation">&#182;</a></h3><p>The goal of validation is to assess how well a model represents the true population (the entire set of examples). For example, we could construct a model that predicts if a person is a good or bad student (e.g high SAT score as the indicator) based on a particular set of features. Applying this model to predict the status for many persons will inevitably result in good and bad predictions. Next, we could evaluate the model's classification performance using the accuracy score metric, which simply returns the percentage of correctly classified samples (persons).<br>
+<strong>Basically this step is the critical point in correctly assessing model quality!!</strong></p>
+<p>If we simply use the same dataset that was used to train the model (training set) also to evaluate the classification performance we are very likely to <strong>overfit the model</strong>. Overfitting means that the model is constructed in such a way that it is biased to predict samples from the training set very well. However, it fails to <strong>generalize</strong> on unseen subsets from the population, i.e decreased classification performance. For example, if the training set from our example consits of a high percentage pf male with high SAT scores. There is no evidence that suggests a causal effect between gender and SAT scores/performance in school but our model would be erroneously biased to consider gender as a good feature for predicting good students simply because that was a pattern in the training set used. Now if we take a subset that actually better represents the true population (e.g equal distribution of male and female good and bad students), the model is likely to have a higher <strong>error rate/lower classification score!!</strong></p>
+<p>In order to avoid this pitfall, we want to train and validate the model on different data subsets. In particular, a training set should be used to fit the model, a validation set should be used to evaluate different models/tuning hyperparameters and select the best one. And a third subset, the test subset (not used for training or validation), should be used to provide an unbiased evaluation of the final model fit. The strategy on how to split the dataset in training, validation and test subsets is very much dictated by the dataset itself. If we have a large dataset with equal allocation of classes of interest, it is reasonable to split the data in 60% for training, 20% for validation and 20% for testing.<br>
+Such a splitting and validation strategy, respectively, is not recommended for the enron dataset, because the dataset is very small and has an unbalanced allocation of classes (poi versus not-poi). Instead we will apply sklearn StratifiedShuffelSplit provided by tester.py. In more detail, StratifiedShuffelSplit uses cross validation in combination with stratified subset splits to validate a model fit. Cross validation splits a dataset in multiple different training and test subsets (here, test subset refers to a validation subset). On each iteration the model is trained with the training set and model fit is validated with the test set. For a dataset that is split in 10 different splits, 10 different training/validation rounds are performed. Each iteration, the model fit is evaluated via one or more of the aforementioned metrics and the final score is simply averaged over all splits. 
+Moreover, StratifiedShuffelSplit randomly splits the dataset, however it preserves class allocation present in the dataset in each training/test split!!. Again, this is extremely important to avoid overfiting, which is likely to happen when training/test splits are just randomly sampled without taking class allocation into account. After all, the majority class is much more likely to be sampled, resulting in even more unbalanced subsets or even worst, subsets devoid of the minority class!!</p>
+<p>One more side note: Having a "perfect" dataset (large and balanced) the validation subset would be subjected to model validation/hyperparameter tuning, following splitting into a training, validation and test subset. But as already stated, splitting small datasets would very much increase the odds of training a biased model! However, <strong>the random subsampling method</strong> of the StratifiedShuffelSplit kind of allows us to skip the initial split of the dataset into a training, validation and test subset, because in each step (training/validation and testing) we use different subsets consisting of different examples (although, there is probably also some overlap in folds)!!
+As such, the entire dataset will be used with the tester.py script to facilitate model validation by applying a 1000-fold cross-validation (generation of 1000 training/test splits), whereas Hyperparameter tuning will be evaluated via GridSearch and StratifiedShuffelSplit cross-validation with 50-500 splits (depends on the final classifier selected; different runtimes for various classifier) but also using the entire dataset.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Comparison of different classification algorithms</strong><br>
+New features have already been engineered and incorporated into the main dataset. However, I want to first evaluate different classifiers using the default feature set. This "baseline" evaluation will serve to select the best one or two classifier that will be further subjected to optimization (feature selection, hyperparameter tuning). Each optimization step will be compared to the performance from "baseline" metrics.</p>
 
 </div>
 </div>
@@ -20246,7 +20356,7 @@ Loading the following files enables the user to proceed with model training and 
 - Logistic Regression
 
 </code></pre>
-<p>As we recall, the features present in the main dataset encompasses encompass quite different size ranges. This is an issue for classifier that rely on distance calculations to define the decision boundary, such as in SVC. Here, a decision boundary will be defined that maximizes the distance to support vectors. If the magnitude of one feature is much bigger than of another feature, the decision boundary will be "pulled" towards the bigger-magnitude feature giving it more weight in the classification. If one assumes that all features are supposed to have equal weight in the decission process, it is required to scale all features to same magnitude. This is not relevant for non-distance based classifier such as Decision Trees. However, for the purpose of comparability, feature scaling will be conducted for all classifier. Moreover, since the class distribution is highly unbalanced in the dataset, I will use balanced class weight if supported by classifier. For KMeans, the number of clusters will be restricted to 2, since the dataset consists of 2 classes.</p>
+<p>As we recall, the features present in the main dataset have different size range. This is an issue for classifier that rely on distance calculations to define the decision boundary, such as in SVC. Here, a decision boundary will be defined that maximizes the distance to support vectors. If the magnitude of one feature is much bigger than of another feature, the decision boundary will be "pulled" towards the bigger-magnitude feature giving it more weight in the classification. If one assumes that all features are supposed to have equal weight in the decission process, it is required to scale all features to same magnitude. This is not relevant for non-distance based classifier such as Decision Trees. However, for the purpose of comparability, feature scaling will be conducted for all classifier. Moreover, since the class distribution is highly unbalanced in the dataset, I will use balanced class weight if supported by classifier. For KMeans, the number of clusters will be restricted to 2, since the dataset consists of 2 classes.</p>
 
 </div>
 </div>
@@ -20263,7 +20373,7 @@ Loading the following files enables the user to proceed with model training and 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
@@ -20290,7 +20400,7 @@ Loading the following files enables the user to proceed with model training and 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">feature_list_default</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">default_dataset</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;deferral_payments&quot;</span><span class="p">,</span> <span class="s2">&quot;restricted_stock_deferred&quot;</span><span class="p">,</span> <span class="s2">&quot;loan_advances&quot;</span><span class="p">,</span> <span class="s2">&quot;director_fees&quot;</span><span class="p">,</span> <span class="s2">&quot;email_address&quot;</span><span class="p">]))</span>
@@ -20310,8 +20420,7 @@ Loading the following files enables the user to proceed with model training and 
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">for</span> <span class="n">clf</span> <span class="ow">in</span> <span class="p">[</span><span class="n">GaussianNB</span><span class="p">(),</span><span class="n">KMeans</span><span class="p">(),</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">),</span> <span class="n">SVC</span><span class="p">(</span><span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">),</span> 
             <span class="n">ADA</span><span class="p">(),</span> <span class="n">DT</span><span class="p">(</span><span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">),</span> <span class="n">RF</span><span class="p">(</span><span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">)]:</span>
 
-    <span class="n">tester</span><span class="o">.</span><span class="n">dump_classifier_and_data</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">final_dataset</span><span class="p">,</span> <span class="n">feature_list_default</span><span class="p">)</span>
-    <span class="n">tester</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+    <span class="n">tester</span><span class="o">.</span><span class="n">test_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">final_dataset</span><span class="p">,</span> <span class="n">feature_list_default</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -20393,9 +20502,29 @@ Naive Bayes, Logistic Regression, Decision Tree. Next, I will repeat performance
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Impact-of-Feature-Engineering-on-classification-performance">Impact of Feature Engineering on classification performance<a class="anchor-link" href="#Impact-of-Feature-Engineering-on-classification-performance">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Based on the aforementioned evaluation metrics, we can already see that Including the entire set of new features (TF-IDF values for the 5 best scoring terms, frequency change in emails sent to poi/received by poi; see also section <strong>Feature engineering</strong>) increased precision and recall using the Naive Bayes classifier, Logistic Regression and Ada Boost. For the other classifiers, one performance metric improved at the expense of lowering the performance of the other metric, i.e. improvment of precision paired with a decrease in recall for the Random Forest classifier and Support Vector Machine. I am surprised that the both, precision and recall decreased with the Decision Tree classifier. I expected either an increase in classification performance or at least a match in the performance score obtained with the default feature set, since Decision Tree performs feature selection by design and "ignores" bad feature. But maybe the overall decrease in performance for the Decision Tree classifier simply reflects the "curse of dimensionality" issue by increasing dimensionality without increasing the sample size, which leads to overfitting.</p>
+<p>Strikingly, the linear classifier tested (Naive Bayes and Logistic Regression) seem to be overall better performer, which is in good agreement with low complexity classifier achieving good performance with a dataset of small sample size. So let's test the performance of the Support Vector classifier with linear kernel.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">feature_list_engineered</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data_df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
@@ -20470,24 +20599,13 @@ Naive Bayes, Logistic Regression, Decision Tree. Next, I will repeat performance
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Including new features improved the overall performance of the Naive Bayes classifier, Logistic Regression and Ada Boost. For the other classifier, one performance metric improved at the expense of lowering the performance of the other metric (e.g., improvment of precision paired with decrease in recall for the Random Forest classifier). I assume that the overall decrease in performance for the Decision Tree classifier reflects the "curse of dimensionality" issue by increasing dimensionality without increasing the sample size. This leads to overfitting. Strikingly, the linear classifier (Naive Bayes and Logistic Regression) seem to be overall better performer, which is in good agreement with low complexity classifier achieving good performance with a dataset of small sample size. So I would like to test the performance of the Support Vector classifier with linear kernel.</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span> <span class="o">=</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">)</span>
-<span class="n">tester</span><span class="o">.</span><span class="n">dump_classifier_and_data</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">final_dataset</span><span class="p">,</span> <span class="n">feature_list_engineered</span><span class="p">)</span>
-<span class="n">tester</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+<span class="n">tester</span><span class="o">.</span><span class="n">test_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">final_dataset</span><span class="p">,</span> <span class="n">feature_list_engineered</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -20547,7 +20665,9 @@ Naive Bayes, Logistic Regression, Decision Tree. Next, I will repeat performance
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Indeed, using linear kernel with the Support Vector classifier improves precision and recall. So let's further optimize classification performance by conducting feature selection and only include features with higher discriminating power, i.e. considerable differences in value distribution for poi and non-poi class. I will use both, a statistical approach via the SelectKBest algorithm and visualization to assess the feature-specific discriminating power. SelectKBest scores the difference in sample means (here, means between the two classes) ranking those features the highest that exhibit the strongest variation between class means.</p>
+<p>Indeed, using linear kernel with the Support Vector classifier improves precision and recall.</p>
+<p>Let's assess the quality of the engineered features. Quality translates here in discriminating power, i.e. considerable differences in value distribution for poi and non-poi class. The more different the value range between the two classes, the better positive impact we can expect from such a feature on classification performance. I will use both, a statistical approach via the SelectKBest algorithm and visualization to assess the feature-specific discriminating power. SelectKBest scores the difference in sample means (here, means between the two classes) ranking those features the highest that exhibit the strongest variation between class means.</p>
+<p>So let's further optimize classification performance by conducting feature selection and only include features with higher discriminating power, i.e. considerable differences in value distribution for poi and non-poi class. I will use both, a statistical approach via the SelectKBest algorithm and visualization to assess the feature-specific discriminating power. SelectKBest scores the difference in sample means (here, means between the two classes) ranking those features the highest that exhibit the strongest variation between class means.</p>
 
 </div>
 </div>
@@ -23459,7 +23579,209 @@ RERERERERCQi/wd2/+80lqY7LgAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Training a support vector classifier with a selected feature set (6 of the highest scoring features with SelectKBest) and linear kernel further improved the classification performance. Both, precision and recall improved for the SVM classifier to 0.609 and 0.612, respectively. Overall, linear classifier exhibited again the best performance, of which SVM classifier exibits the best balanced score in terms of recall and precision. Next, I want to apply a systematical feature selection approach. Especially since both the dataset and total feature space are rather small, I will perform a sequential feature selection (combinatorial approach). Furthermore the results from the sequential feature selection will be compared to the dimensionality reduction approach via PCA.</p>
+<p>The result from SelectKBest shows that two of the engineered TF-IDF features (word_feature_2, word_feature_3) rank 5th and 6th in the SelectKBest scoring, which suggests that both features might be of good quality. This also aligns with the plots in the figure above. Both features exhibit a different distribution for poi class versus not-poi class.</p>
+<p>Let's pinpoint the effect of those two features directly on classification performance by comparing the performance of the baseline (default feature set) SVM classifier with linear kernel with the same classifier, however, extending the default feature set by solely the two engineered features word_feature_2 and word_feature_3.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span> <span class="o">=</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">)</span>
+<span class="n">tester</span><span class="o">.</span><span class="n">test_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">final_dataset</span><span class="p">,</span> <span class="n">feature_list_default</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>SVC(C=1.0, cache_size=200, class_weight=&#39;balanced&#39;, coef0=0.0,
+  decision_function_shape=&#39;ovr&#39;, degree=3, gamma=&#39;auto&#39;, kernel=&#39;linear&#39;,
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	Accuracy: 0.79253	Precision: 0.33733	Recall: 0.57650	F1: 0.42562	F2: 0.50490
+	Total predictions: 15000	True positives: 1153	False positives: 2265	False negatives:  847	True negatives: 10735
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">selected_feature_list</span> <span class="o">=</span> <span class="n">feature_list_default</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;word_feature_2&#39;</span><span class="p">,</span> <span class="s1">&#39;word_feature_3&#39;</span><span class="p">]</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span> <span class="o">=</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">)</span>
+<span class="n">tester</span><span class="o">.</span><span class="n">test_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">final_dataset</span><span class="p">,</span> <span class="n">selected_feature_list</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>SVC(C=1.0, cache_size=200, class_weight=&#39;balanced&#39;, coef0=0.0,
+  decision_function_shape=&#39;ovr&#39;, degree=3, gamma=&#39;auto&#39;, kernel=&#39;linear&#39;,
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	Accuracy: 0.84193	Precision: 0.43995	Recall: 0.67950	F1: 0.53409	F2: 0.61277
+	Total predictions: 15000	True positives: 1359	False positives: 1730	False negatives:  641	True negatives: 11270
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By extending the default feature set with word_feature_2 and word_feature_3, both, precision and recall improve significantly, resulting in a score of 0.440 and 0.680, respectively.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>effect of word_feature_2 and word_feature_3 (TF-IDF features) on classification</strong></p>
+<table>
+<thead><tr>
+<th>Classifier</th>
+<th>Accuracy</th>
+<th>Precision</th>
+<th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SVC</td>
+<td>0.842</td>
+<td>0.440</td>
+<td>0.680</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>On the other hand, the engineered features describing a change in frequency for emails sent to poi/- received by poi
+rank very low in the SelectKBest ranking, freq_change_sent feature even being the feature with least discriminating power. Let's see, if the bad ranking also reflects a negative impact or no impact at all on the classification process. Again, I will compare the performance with the baseline SVM classifier with linear kernel.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">selected_feature_list_2</span> <span class="o">=</span> <span class="n">feature_list_default</span><span class="o">+</span><span class="p">[</span><span class="s1">&#39;freq_change_sent&#39;</span><span class="p">,</span> <span class="s1">&#39;freq_change_received&#39;</span><span class="p">]</span>
+<span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span> <span class="o">=</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">)</span>
+<span class="n">tester</span><span class="o">.</span><span class="n">test_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">final_dataset</span><span class="p">,</span> <span class="n">selected_feature_list_2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>SVC(C=1.0, cache_size=200, class_weight=&#39;balanced&#39;, coef0=0.0,
+  decision_function_shape=&#39;ovr&#39;, degree=3, gamma=&#39;auto&#39;, kernel=&#39;linear&#39;,
+  max_iter=-1, probability=False, random_state=None, shrinking=True,
+  tol=0.001, verbose=False)
+	Accuracy: 0.77820	Precision: 0.29814	Recall: 0.49000	F1: 0.37072	F2: 0.43413
+	Total predictions: 15000	True positives:  980	False positives: 2307	False negatives: 1020	True negatives: 10693
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As expected, extending the default feature set by freq_change_sent and freq_change_received features, has a negative impact on classification performance. Both, recall and precision decrease to 0.490 and 0.298.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>effect of freq_change_sent and freq_change_received on classification</strong></p>
+<table>
+<thead><tr>
+<th>Classifier</th>
+<th>Accuracy</th>
+<th>Precision</th>
+<th>Recall</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SVC</td>
+<td>0.778</td>
+<td>0.298</td>
+<td>0.490</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Based on the assessment results, we can conclude that word_feature_2 and word_feature_3 should be included in the final feature set, whereas freq_change_sent and freq_change_received increase model complaxity without providing further information to improve discriminating power and, thus, classification performance. As such freq_change_sent and freq_change_received should be ommited from the final feature set.<br>
+Of course we want to select the best feature subset that maximizes classification performance. One possibility is to simply arbitrarily select a set of the best scoring features according to SelectKBest algorithm. But how many features should we include?<br>
+For example, if we take the 6 (arbitrarily) best scoring features from the SelectKBest algorithm (SVM classifier with linear kernel), precision and recall increased even further to 0.609 and 0.612, respectively!</p>
 
 </div>
 </div>
@@ -23470,8 +23792,7 @@ RERERERERCQi/wd2/+80lqY7LgAAAABJRU5ErkJggg==
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span> <span class="o">=</span> <span class="s2">&quot;linear&quot;</span><span class="p">,</span> <span class="n">class_weight</span><span class="o">=</span><span class="s2">&quot;balanced&quot;</span><span class="p">)</span>
-<span class="n">tester</span><span class="o">.</span><span class="n">dump_classifier_and_data</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">final_dataset</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;poi&quot;</span><span class="p">,</span><span class="s2">&quot;word_feature_2&quot;</span><span class="p">,</span> <span class="s2">&quot;word_feature_3&quot;</span><span class="p">,</span><span class="s2">&quot;exercised_stock_options&quot;</span><span class="p">,</span><span class="s2">&quot;total_stock_value&quot;</span><span class="p">,</span> <span class="s2">&quot;long_term_incentive&quot;</span><span class="p">,</span> <span class="s2">&quot;bonus&quot;</span><span class="p">])</span>
-<span class="n">tester</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+<span class="n">tester</span><span class="o">.</span><span class="n">test_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">final_dataset</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;poi&quot;</span><span class="p">,</span><span class="s2">&quot;word_feature_2&quot;</span><span class="p">,</span> <span class="s2">&quot;word_feature_3&quot;</span><span class="p">,</span><span class="s2">&quot;exercised_stock_options&quot;</span><span class="p">,</span><span class="s2">&quot;total_stock_value&quot;</span><span class="p">,</span> <span class="s2">&quot;long_term_incentive&quot;</span><span class="p">,</span> <span class="s2">&quot;bonus&quot;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -23504,7 +23825,7 @@ RERERERERCQi/wd2/+80lqY7LgAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>using selected features (linear kernel with SVC)</strong></p>
+<p><strong>using the 6 best scoring features from SelectKBest selection (linear kernel with SVC)</strong></p>
 <table>
 <thead><tr>
 <th>Classifier</th>
@@ -23552,6 +23873,16 @@ RERERERERCQi/wd2/+80lqY7LgAAAABJRU5ErkJggg==
 </tr>
 </tbody>
 </table>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Nevertheless, to answer this question more thourghly, I decided to apply a systematical feature selection approach. Since both the dataset and total feature space are rather small, I will perform a sequential feature selection (combinatorial approach). This final feature selection process will provide more insight on the final feature subset that will be ultimately used.</p>
 
 </div>
 </div>
@@ -23716,7 +24047,7 @@ Due to the greedy nature of this selection approach, there is a tradeoff between
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><em>best 7-subset feature set:</em><br>
+<p><strong>final feature set:</strong><br>
 ['bonus',
  'total_stock_value',
  'exercised_stock_options',
@@ -23733,7 +24064,8 @@ Due to the greedy nature of this selection approach, there is a tradeoff between
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Based on the results from sequential feature selection, the overall performance increases with decreasing number of features. The overall best performance is achieved with selected subset with 7 features. Interestingly, the selected subset contain 3 of the engineered features (tfidf features and email features) and 4 of the best financial features based on SelectKBest scoring. Feature selection further improved the prediction performance. However, I want to perform hyperparameter tuning to hopefully furthermore boost the prediction performance</p>
+<p>Based on the results from sequential feature selection, the overall performance increases with decreasing number of features. The overall best performance is achieved with a selected 7 features-containing subset. Interestingly, although the impact of the engineered feature freq_change_received on classification performance was negative when simply extending the default dataset! However, in combination with other features, freq_change_received has obviously a positive impact! Also, the TF-IDF-based features word_feature_2 and word_feature_3 have been selected as most informative features in terms of classification performance.<br>
+So the final feature set, which will be used in downstream processing, contains 3 of the engineered features (word_feature_2, word_feature_3,freq_change_received). In summary, feature selection further improved classification performance, with the final feature subset resulting in a precision and recall score of 0.623 and 0.627, respectively. However, I want to perform hyperparameter tuning, hoping to further boost the prediction performance.</p>
 
 </div>
 </div>
@@ -23743,9 +24075,11 @@ Due to the greedy nature of this selection approach, there is a tradeoff between
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Hyperparameter Tuning</strong><br>
-The best feature subset (sequential feature selection) will be used in combination with the previously evaluated best classifier (SVC) to facilitate the final optimization step.
-Tuning will be conducted via GridSearch and similar to feature selection, I will use StratifiedShuffleSplit to account for high variance in the dataset. Since the overall time complexity is lower than in feature selection, I will use 500 folds with StratifiedShuffleSplit. I will ommit rbf kernel and poly kernel in grid search, since linear kernel resulted in best performance. Again, I figure this is a good tradeoff between runtime and model performance.</p>
+<h3 id="Hyperparameter-Tuning">Hyperparameter Tuning<a class="anchor-link" href="#Hyperparameter-Tuning">&#182;</a></h3><p>Each Machine Learning algorithm is encapsuled by a mathematical scaffold. This set of operations specifies the rules for the algorithm to effectively define a decision boundary that splits a dataset into 2 or more subsets. Ultimately, these subsets denote different type of classes within a dataset that the user wants to discriminate.<br>
+Hyperparameter can be viewed as variables that constrain the results of the mathematical rules intrinsic to the algorithm and, thus, directly impact the definition of the decision boundary or how exactly a datapoint is selected to belong to either class.
+For example, the hyperparameter C in SVM determines the misclassification penalty for a particular class observation. This is important in defining the decision boundary if the classes within the dataset are not perfectly separable (probably always the case). As already stated, if we choose to evaluate the performance via accuracy score and we have an extremely unbalanced dataset, a SVM classifier will be biased towards correctly classifying the majority class (class with more examples in the dataset), which in worst case might result in complete misclassification of the minority class. The hyperparameter class weight is inversly proportional to class percentages in the dataset and is used to weight the penalty score determined by C (<a href="https://chrisalbon.com/machine_learning/support_vector_machines/imbalanced_classes_in_svm/">https://chrisalbon.com/machine_learning/support_vector_machines/imbalanced_classes_in_svm/</a>). So by increasing the class weight hyperparameter towards the minority class, we can control the penalty for misclassification and, thus, reduce the bias of the SVM algorithm to preferably trying to classify the majority class correctly by penalizing wrong minority class prediction more. As such, choosing the optimal class weight or C results in overall improvement of classification performance!<br>
+Initializing objects from the sckit-learn module results in predefined machine learning algorithms that use some default hyperparameter settings. These presets allow the user to apply those algorithms "out of the box". However, by no means they constitute the best hyperparameter values for any dataset! It really depends on the dataset what hyperparameter values provide the best constraint to maximize classification performance. Let's get back to the enron dataset, which is highly unbalanced. This suggests that changing the default class weight from 1:1 to a ratio more in favour of the minority class would have a positive impact on classification performance. So basically, hyperparameter tuning refers to changing those values and concomitantly monitoring the effect on classification performance by applying validation techniques.<br>
+Tuning will be conducted via GridSearch and similar to feature selection, I will use StratifiedShuffleSplit to account for the small size of the dataset as well as unbalanced class allocation. Using GridSearch, we can define for each hyperparameter of interest a range of values (parameter grid), which will be combined in all possible arrangements. Each combination will be validated using cross validation (f1 score wil be used as performance metric). In more detail, the final subset (from sequential feature selection) will be used in combination with the previously evaluated best classifier (SVM with linear kernel). Since the overall time complexity is lower than in feature selection, I will use 500 folds with StratifiedShuffleSplit. I will ommit rbf kernel and poly kernel in grid search, since linear kernel resulted in best performance. Again, I figure this is a good tradeoff between runtime and model performance. I decided to tune the penalty parameter C and the class weight parameter, because as already stated, the dataset exhibits a highly unbalanced class allocation, for which the classification performance can be optimized by tuning those two parameter.</p>
 
 </div>
 </div>
@@ -24292,6 +24626,19 @@ Accuracy 0.979776579353
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div>
     </div>
   </div>

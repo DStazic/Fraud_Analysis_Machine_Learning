@@ -67,10 +67,11 @@ p28
 F0.0
 sS'gamma'
 p29
-F0.05
-sS'class_weight'
+S'auto'
 p30
-(dp31
+sS'class_weight'
+p31
+(dp32
 I0
 I1
 sI1
